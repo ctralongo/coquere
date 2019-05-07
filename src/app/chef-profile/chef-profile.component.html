@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Colo Shop Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap4/bootstrap.min.css">
+  <link href="/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" href="/assets/plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/single_styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/single_responsive.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+
+<div class="super_container">
+
+  <!-- Header -->
+
+  <app-common-header></app-common-header>
+
+  <div class="fs_menu_overlay"></div>
+
+  <!-- Hamburger Menu -->
+
+  <div class="hamburger_menu">
+    <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="hamburger_menu_content text-right">
+      <ul class="menu_top_nav">
+        <li class="menu_item has-children">
+          <a href="#">
+            usd
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="menu_selection">
+            <li><a href="#">cad</a></li>
+            <li><a href="#">aud</a></li>
+            <li><a href="#">eur</a></li>
+            <li><a href="#">gbp</a></li>
+          </ul>
+        </li>
+        <li class="menu_item has-children">
+          <a href="#">
+            English
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="menu_selection">
+            <li><a href="#">French</a></li>
+            <li><a href="#">Italian</a></li>
+            <li><a href="#">German</a></li>
+            <li><a href="#">Spanish</a></li>
+          </ul>
+        </li>
+        <li class="menu_item has-children">
+          <a href="#">
+            My Account
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="menu_selection">
+            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+          </ul>
+        </li>
+        <li class="menu_item"><a href="#">home</a></li>
+        <li class="menu_item"><a href="#">shop</a></li>
+        <li class="menu_item"><a href="#">promotion</a></li>
+        <li class="menu_item"><a href="#">pages</a></li>
+        <li class="menu_item"><a href="#">blog</a></li>
+        <li class="menu_item"><a href="#">contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container single_product_container">
+    <div class="row">
+      <div class="col">
+
+        <!-- Breadcrumbs -->
+
+        <div class="breadcrumbs d-flex flex-row align-items-center">
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="single_product_pics">
+          <div class="row">
+            <div class="col-lg-12 image_col order-lg-2 order-1">
+              <div class="single_product_image">
+                <div class="single_product_image_background" [ngStyle]="{'background-image':'url('+chef_profilePic+')'}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="product_details">
+          <div class="product_details_title">
+            <h2>{{chef_name}}</h2>
+            <p>{{chef_bio}}</p>
+            <br>
+            <p>* Prices shown below are hourly rates. Additional charges may apply. </p>
+          </div>
+
+          <!--<div class="original_price">$100.00</div>-->
+          <div class="product_price">${{chef_price}}</div>
+          <ul class="star_rating">
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+          </ul>
+
+          <br><br>
+          <button *ngIf="this.authService.isLoggedIn" (click)="displayContactInfo = true" type="button" class="btn btn-danger">Book this chef</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="overlay" *ngIf="displayContactInfo"></div>
+  <div class="overlay-message" *ngIf="displayContactInfo">
+    <button *ngIf="this.authService.isLoggedIn" (click)="displayContactInfo = false" type="button" class="btn btn-danger closeDialogButton">X</button>
+    <div class="info-container">
+      <h2 class="name-header">{{chef_name}}</h2>
+      <div class="contact-information">
+        <h5>
+          Phone Number
+        </h5>
+        {{chef_phone}}
+        <br>
+        <br>
+        <h5>
+          Email
+        </h5>
+        {{chef_email}}
+
+        <div class="google-map" >
+          <div class="mapouter"><div class="gmap_canvas"><iframe width="398" height="367" id="gmap_canvas" src="https://maps.google.com/maps?q=austin%20tx&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.emojilib.com">emojilib.com</a></div><style>.mapouter{position:relative;text-align:right;height:367px;width:398px;}.gmap_canvas {overflow:hidden;background:none!important;height:367px;width:398px;}</style></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tabs -->
+
+  <div class="tabs_section_container">
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="tabs_container">
+            <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
+              <li class="tab active" data-active-tab="tab_1"><span>Plates</span></li>
+              <li class="tab" data-active-tab="tab_3"><span>Reviews (2)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+
+          <!-- Tab Description -->
+
+          <div id="tab_1" class="tab_container active">
+            <div class="row">
+              <div class="col-lg-5 desc_col">
+                <div class="tab_title">
+                  <h4>Plates</h4>
+                </div>
+                <div class="tab_text_block">
+                  <h2>{{chef_dish1}}</h2>
+                  <p>{{chef_dish1_desc}}</p>
+                </div>
+
+                <div class="tab_image">
+                  <img src="{{chef_dishpic3}}" alt="">
+                </div>
+                <div class="tab_text_block">
+                  <h2>{{chef_dish2}}</h2>
+                  <p>{{chef_dish2_desc}}</p>
+                </div>
+              </div>
+              <div class="col-lg-5 offset-lg-2 desc_col">
+                <div class="tab_image">
+                  <img src={{chef_dishpic1}} alt="">
+                </div>
+                <div class="tab_text_block">
+                  <h2>{{chef_dish3}}</h2>
+                  <p>{{chef_dish3_desc}}</p>
+                </div>
+                <div class="tab_image desc_last">
+                  <img src={{chef_dishpic2}} alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+
+  <app-common-footer></app-common-footer>
+
+</div>
+
+<!--<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
+<!--<script src="/assets/styles/bootstrap4/popper.js"></script>-->
+<!--<script src="/assets/styles/bootstrap4/bootstrap.min.js"></script>-->
+<!--<script src="/assets/plugins/Isotope/isotope.pkgd.min.js"></script>-->
+<!--<script src="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>-->
+<!--<script src="/assets/plugins/easing/easing.js"></script>-->
+<!--<script src="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>-->
+<!--<script src="/assets/js/single_custom.js"></script>-->
+</body>
+
+</html>

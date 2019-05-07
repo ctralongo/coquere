@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Contact Us</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Colo Shop Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap4/bootstrap.min.css">
+  <link href="/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" href="/assets/plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/contact_styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/contact_responsive.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+
+<div class="super_container">
+
+  <!-- Header -->
+
+  <app-common-header></app-common-header>
+
+  <div class="fs_menu_overlay"></div>
+
+  <!-- Hamburger Menu -->
+
+  <div class="hamburger_menu">
+    <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="hamburger_menu_content text-right">
+      <ul class="menu_top_nav">
+        <li class="menu_item has-children">
+          <a href="#">
+            usd
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="menu_selection">
+            <li><a href="#">cad</a></li>
+            <li><a href="#">aud</a></li>
+            <li><a href="#">eur</a></li>
+            <li><a href="#">gbp</a></li>
+          </ul>
+        </li>
+        <li class="menu_item has-children">
+          <a href="#">
+            English
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="menu_selection">
+            <li><a href="#">French</a></li>
+            <li><a href="#">Italian</a></li>
+            <li><a href="#">German</a></li>
+            <li><a href="#">Spanish</a></li>
+          </ul>
+        </li>
+        <li class="menu_item has-children">
+          <a href="#">
+            My Account
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="menu_selection">
+            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+          </ul>
+        </li>
+        <li class="menu_item"><a href="#">home</a></li>
+        <li class="menu_item"><a href="#">shop</a></li>
+        <li class="menu_item"><a href="#">promotion</a></li>
+        <li class="menu_item"><a href="#">pages</a></li>
+        <li class="menu_item"><a href="#">blog</a></li>
+        <li class="menu_item"><a href="#">contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container contact_container">
+    <br><br>
+    <div class="row">
+
+      <div class="col-lg-6 contact_col">
+        <div class="product_image">
+          <br><br><br><br>
+          <img src="/assets/images/chef.jpg" width="95%">
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 get_in_touch_col">
+        <div class="get_in_touch_contents">
+          <h1>Get Started Today!</h1>
+          <p>Make your account below.</p>
+          <br>
+
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" #userPwd required>
+          </div>
+
+          <div class="form-group">
+            <input type="button" class="btn btn-dark" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+          </div>
+
+          <!--<form (ngSubmit)="onSubmit()">-->
+            <!--<div>-->
+              <!--<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required." required [(ngModel)]="chef_name">-->
+              <!--<input id="input_price" class="form_input input_name input_ph" type="text" name="name" placeholder="Hourly Rate" required="required" data-error="Price is required." required [(ngModel)]="chef_price">-->
+              <!--<input id="input_specialty" class="form_input input_name input_ph" type="text" name="name" placeholder="Specialty" required="required" data-error="Specialty is required." required [(ngModel)]="chef_specialty">-->
+
+              <!--<input id="input_email" class="form_input input_email input_ph" type="email" name="email" placeholder="Email" required="required" data-error="Valid email is required." required [(ngModel)]="chef_email">-->
+              <!--<input id="input_password" class="form_input input_ph" type="password" placeholder="password" required="required" data-error="Password is required." required [(ngModel)]="chef_password">-->
+              <!--&lt;!&ndash;<input id="input_password_confirm" class="form_input input_ph" type="url" type="password" placeholder="confirm password" required="required" data-error="Password is required.">&ndash;&gt;-->
+
+              <!--<textarea id="input_message" class="input_ph input_message" name="message"  placeholder="Write a quick summary of yourself!" rows="3" required data-error="Please write a quick bio" required [(ngModel)]="chef_bio"></textarea>-->
+            <!--</div>-->
+            <!--<div>-->
+              <!--<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">create account</button>-->
+            <!--</div>-->
+          <!--</form>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <app-common-footer></app-common-footer>
+
+</div>
+
+<!--<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
+<!--<script src="/assets/styles/bootstrap4/popper.js"></script>-->
+<!--<script src="/assets/styles/bootstrap4/bootstrap.min.js"></script>-->
+<!--<script src="/assets/plugins/Isotope/isotope.pkgd.min.js"></script>-->
+<!--<script src="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>-->
+<!--<script src="/assets/plugins/easing/easing.js"></script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>-->
+<!--<script src="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>-->
+<!--<script src="/assets/js/contact_custom.js"></script>-->
+</body>
+
+</html>

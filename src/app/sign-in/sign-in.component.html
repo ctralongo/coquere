@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact Us</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Colo Shop Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap4/bootstrap.min.css">
+  <link href="/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" href="/assets/plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/contact_styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/contact_responsive.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+
+<div class="super_container">
+
+  <!-- Header -->
+
+  <app-common-header></app-common-header>
+
+  <div class="fs_menu_overlay"></div>
+
+
+  <div class="container contact_container">
+    <!-- Contact Us -->
+    <br><br>
+    <div class="row">
+
+      <div class="col-lg-6 contact_col">
+        <div class="product_image">
+          <br><br><br><br>
+          <img src="/assets/images/chef.jpg" width="95%">
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 get_in_touch_col">
+        <div class="get_in_touch_contents">
+          <h1>Sign In</h1>
+          <p>To your account now!</p>
+          <br>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Username" #userName required>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" #userPassword required>
+          </div>
+
+          <!-- Calling SignIn Api from AuthService -->
+          <div class="form-group">
+            <input type="button" class="btn btn-dark" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+          </div>
+
+
+          <div class="forgotPassword">
+            <span routerLink="/forgot-password">Forgot Password?</span>
+          </div>
+        </div>
+
+        <div class="redirectToLogin">
+          <span>Don't have an account?<span class="redirect" routerLink="/register"> Sign Up</span></span>
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+      <app-common-footer></app-common-footer>
+</div>
+
+
+
+
+<!--<script src="/assets/js/jquery-3.2.1.min.js"></script>-->
+<!--<script src="/assets/styles/bootstrap4/popper.js"></script>-->
+<!--<script src="/assets/styles/bootstrap4/bootstrap.min.js"></script>-->
+<!--<script src="/assets/plugins/Isotope/isotope.pkgd.min.js"></script>-->
+<!--<script src="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>-->
+<!--<script src="/assets/plugins/easing/easing.js"></script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>-->
+<!--<script src="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>-->
+<!--<script src="/assets/js/contact_custom.js"></script>-->
+</body>
+
+</html>
